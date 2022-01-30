@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 50px 50px 50px;
+  min-width: 350px;
+}
+
+.container mat-card mat-card-content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.mat-card {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.mat-elevation-z3 {
+  border-radius: 10px;
+}
+
+.mat-elevation-z15 {
+  border-radius: 10px;
+}
+
+mat-form-field {
+  width: 300px;
+  position: relative;
+  /* min-width: 250px;
+  max-width: 250px; */
+}
+
+:host ::ng-deep .mat-form-field-subscript-wrapper {
+  position: static;
+  padding: 0;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0.5vh;
+}
+
+.button {
+  /* display: flex;
+  justify-content: flex-end; */
+  width: inherit;
+  margin: 16px 0px;
+}
+
+.mat-raised-button {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.mat-h2,
+.mat-title,
+.mat-typography h2 {
+  padding: 0 16px;
+}
+.send-to-login {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.send-to-login .mat-title {
+  font-size: 18px;
+}
+
+.mat-icon {
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+#a-header {
+  color: white;
+  text-decoration: none;
+}
+
+/* a {
+  text-decoration: none;
+} */
+
+/* .yes {
+  border-radius: 130px;
+} */

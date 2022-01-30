@@ -19,5 +19,3 @@ giving the routes for lazy loading. ''**'' uses wildcard notation, and is always
 routes are called in order, if first not matches, route is matched with next.
 
 ---
-
-

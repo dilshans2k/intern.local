@@ -1,1 +1,159 @@
-<p>register works!</p>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<mat-toolbar color="primary">
+  <a id="a-header" [routerLink]="['../login']"
+    ><mat-icon aria-hidden="false" aria-label="Example home icon"
+      >house</mat-icon
+    >
+    intern.local</a
+  >
+</mat-toolbar>
+<div class="container">
+  <div
+    [ngClass]="isHover"
+    (mouseover)="changeElevation($event)"
+    (mouseout)="changeElevation($event)"
+    [class.mat-elevation-z3]="!ishover"
+    [class.mat-elevation-z15]="ishover"
+  >
+    <!-- [class.mat-elevation-z2]="true" -->
+    <div>
+      <mat-card>
+        <mat-card-title>Register</mat-card-title>
+        <mat-card-content>
+          <form [formGroup]="form" (ngSubmit)="signUp()">
+            <mat-form-field appearance="outline"
+              ><mat-label>Username</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Username"
+                formControlName="uname"
+              />
+              <mat-error *ngIf="uname.touched && uname.hasError('required')"
+                >Username is required</mat-error
+              >
+              <mat-error *ngIf="uname.touched && uname.hasError('minlength')"
+                >Username should be atleast 3 characters long</mat-error
+              >
+              <mat-error *ngIf="uname.touched && uname.hasError('maxlength')"
+                >Username should not exceed 20 characters</mat-error
+              >
+              <mat-error *ngIf="uname.touched && uname.hasError('pattern')"
+                >Username should not contain special characters</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline"
+              ><mat-label>First Name</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="First Name"
+                formControlName="firstname"
+              />
+              <mat-error
+                *ngIf="firstname.touched && firstname.hasError('required')"
+                >Firstname is required</mat-error
+              >
+              <mat-error
+                *ngIf="firstname.touched && firstname.hasError('pattern')"
+                >Firstname should only contain characters</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="height: auto"
+              ><mat-label>Last Name</mat-label>
+              <input
+                type="text"
+                matInput
+                placeholder="Last Name"
+                formControlName="lastname"
+              />
+              <mat-error
+                *ngIf="lastname.touched && lastname.hasError('required')"
+                >Lastname is required</mat-error
+              >
+              <mat-error
+                *ngIf="lastname.touched && lastname.hasError('pattern')"
+                >Lastname should only contain characters</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline"
+              ><mat-label>Email</mat-label>
+              <input
+                type="email"
+                matInput
+                placeholder="Email"
+                formControlName="email"
+              />
+              <mat-error *ngIf="email.touched && email.hasError('required')"
+                >Email is required</mat-error
+              >
+              <mat-error *ngIf="email.touched && email.hasError('email')"
+                >Please enter a valid email</mat-error
+              >
+              <mat-error *ngIf="email.touched && email.hasError('pattern')"
+                >Docquity email is required</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline"
+              ><mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                placeholder="Password"
+                formControlName="password"
+              />
+              <mat-error
+                *ngIf="password.touched && password.hasError('required')"
+                >Password is required</mat-error
+              >
+              <mat-error
+                *ngIf="password.touched && password.hasError('pattern')"
+                >Must contain at least one number and one uppercase and
+                lowercase letter and special character, and at least 8 and less
+                than 16 characters</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Phone no</mat-label>
+              <input
+                type="number"
+                matInput
+                placeholder="Phone no"
+                formControlName="pno"
+              />
+              <mat-error *ngIf="pno.touched && pno.hasError('required')"
+                >Phone no is required</mat-error
+              >
+              <mat-error *ngIf="pno.touched && pno.hasError('pattern')"
+                >10 digit phone number is required</mat-error
+              >
+            </mat-form-field>
+
+            <mat-hint *ngIf="!form.valid"
+              ><small>All the fields are mandatory</small></mat-hint
+            >
+            <div class="button">
+              <button
+                mat-raised-button
+                type="submit"
+                [disabled]="form.valid"
+                color="primary"
+              >
+                Sign In
+              </button>
+            </div>
+            <div class="send-to-login mat-typography">
+              <a class="mat-title" [routerLink]="['../login']"
+                >Already have an account?</a
+              >
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,16 @@
 ## TODO
 
-- [ ] public module
+- [x] public module
 
-- [ ] private module
+- [x] private module
 
-- [ ] implement [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) for both modules
+- [x] implement [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) for both modules
 
-- [ ] setup components dashboard, register, login
+- [x] setup components dashboard, register, login
 
-- [ ] setup basic auth guard for private module
+- [x] setup basic auth guard for private module
 
-- [ ] setup [routing](https://angular.io/guide/routing-overview) for public module
+- [x] setup [routing](https://angular.io/guide/routing-overview) for public module
 
 - [ ] create registration form with with angular reactive forms
 
