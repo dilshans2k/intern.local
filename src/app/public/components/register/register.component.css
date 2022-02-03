@@ -1,3 +1,13 @@
+.mat-icon {
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+#a-header {
+  color: white;
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -5,16 +15,20 @@
   min-width: 350px;
 }
 
-.container mat-card mat-card-content form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
+#matcardparent {
+  border-radius: 10px;
 }
 
 .mat-card {
   padding: 20px;
   border-radius: 10px;
+}
+
+.container mat-card mat-card-content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
 
 .mat-elevation-z3 {
@@ -25,25 +39,20 @@
   border-radius: 10px;
 }
 
-mat-form-field {
-  width: 300px;
-  position: relative;
-  /* min-width: 250px;
-  max-width: 250px; */
-}
-
 :host ::ng-deep .mat-form-field-subscript-wrapper {
   position: static;
   padding: 0;
 }
-
 :host ::ng-deep .mat-form-field-wrapper {
   padding-bottom: 0.5vh;
 }
 
+mat-form-field {
+  width: 300px;
+  position: relative;
+}
+
 .button {
-  /* display: flex;
-  justify-content: flex-end; */
   width: inherit;
   margin: 16px 0px;
 }
@@ -60,21 +69,11 @@ mat-form-field {
 }
 .send-to-login {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .send-to-login .mat-title {
   font-size: 18px;
-}
-
-.mat-icon {
-  vertical-align: middle;
-  margin-bottom: 5px;
-}
-
-#a-header {
-  color: white;
-  text-decoration: none;
 }
 
 /* a {

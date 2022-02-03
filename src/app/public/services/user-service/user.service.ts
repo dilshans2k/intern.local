@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { UserI } from 'src/app/model/user.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class UserService {
 
   create(user: UserI): Observable<UserI> {
     return this.http
-      .post<UserI>('http://127.0.0.1:3000/user/createuser', user)
+      .post<UserI>(`${environment.apiUrl}/user/createuser`, user)
       .pipe(
         tap((createdUser: UserI) =>
           this.snackbar.open(

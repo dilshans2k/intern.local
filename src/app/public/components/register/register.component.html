@@ -20,7 +20,7 @@
     [class.mat-elevation-z15]="ishover"
   >
     <!-- [class.mat-elevation-z2]="true" -->
-    <div>
+    <div id="matcardparent">
       <mat-card>
         <mat-card-title>Register</mat-card-title>
         <mat-card-content>
@@ -36,12 +36,12 @@
               <mat-error *ngIf="uname.touched && uname.hasError('required')"
                 >Username is required</mat-error
               >
-              <mat-error *ngIf="uname.touched && uname.hasError('minlength')"
+              <!-- <mat-error *ngIf="uname.touched && uname.hasError('minlength')"
                 >Username should be atleast 3 characters long</mat-error
               >
               <mat-error *ngIf="uname.touched && uname.hasError('maxlength')"
                 >Username should not exceed 20 characters</mat-error
-              >
+              > -->
               <mat-error *ngIf="uname.touched && uname.hasError('pattern')"
                 >Username should not contain special characters</mat-error
               >
@@ -91,9 +91,9 @@
               <mat-error *ngIf="email.touched && email.hasError('required')"
                 >Email is required</mat-error
               >
-              <mat-error *ngIf="email.touched && email.hasError('email')"
+              <!-- <mat-error *ngIf="email.touched && email.hasError('email')"
                 >Please enter a valid email</mat-error
-              >
+              > -->
               <mat-error *ngIf="email.touched && email.hasError('pattern')"
                 >Docquity email is required</mat-error
               >
@@ -140,10 +140,10 @@
               <button
                 mat-raised-button
                 type="submit"
-                [disabled]="form.valid"
+                [disabled]="!form.valid"
                 color="primary"
               >
-                Sign In
+                Sign Up
               </button>
             </div>
             <div class="send-to-login mat-typography">

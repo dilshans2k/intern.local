@@ -72,8 +72,6 @@ export class RegisterComponent {
     } else this.ishover = false;
   }
 
-  signIn() {}
-
   getFormElements(form: FormGroup, attribute: string): FormControl {
     return form.get(attribute) as FormControl;
   }

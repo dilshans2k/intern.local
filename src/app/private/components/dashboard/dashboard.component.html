@@ -1,1 +1,84 @@
-<p>dashboard works!</p>
+<mat-toolbar color="primary">
+  <div id="logo-toolbar">
+    <a id="a-header" [routerLink]="['../../public/login']">
+      <mat-icon aria-hidden="false">house</mat-icon>
+      intern.local
+    </a>
+  </div>
+  <div id="dashboard-toolbar-text">
+    <mat-card-title>Dashboard</mat-card-title>
+  </div>
+
+  <div id="logout-toolbar">
+    <button mat-flat-button [matMenuTriggerFor]="userCard">
+      <mat-icon id="user-card-icon" aria-hidden="false"
+        >account_circle</mat-icon
+      >
+      {{ currentUserObject.firstname }}
+
+      <mat-menu id="mat-menu-content1" #userCard="matMenu" xPosition="before">
+        <div id="mat-content">
+          <mat-list>Username: {{ currentUserObject.uname }}</mat-list>
+          <mat-list>
+            Name: {{ currentUserObject.firstname.toUpperCase() }}
+          </mat-list>
+          <mat-list>Email: {{ currentUserObject.email }}</mat-list>
+          <mat-list>Phone no: {{ currentUserObject.pno }}</mat-list>
+        </div>
+        <div id="logout-button">
+          <button mat-icon-button (click)="logout()">
+            <mat-icon aria-hidden="false">logout</mat-icon> Logout
+          </button>
+        </div>
+      </mat-menu>
+    </button>
+  </div>
+</mat-toolbar>
+
+<div id="mat-expansion-panel">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Users </mat-panel-title>
+      <mat-panel-description>
+        Expand to get list of registered users.
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table mat-table [dataSource]="dataSource" [ngClass]="isHover">
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Username">
+        <th mat-header-cell *matHeaderCellDef>UserName</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.uname }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Firstname">
+        <th mat-header-cell *matHeaderCellDef>Firstname</th>
+        <td mat-cell *matCellDef="let element">{{ element.firstname }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Phone Number">
+        <th mat-header-cell *matHeaderCellDef>Phone number</th>
+        <td mat-cell *matCellDef="let element">{{ element.pno }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        *matRowDef="let row; columns: displayedColumns"
+        mat-row
+        [ngStyle]="{
+          'background-color': getColor(row.uname)
+        }"
+      ></tr>
+    </table>
+  </mat-expansion-panel>
+</div>

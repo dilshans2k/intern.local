@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthInterceptor } from '../http-interceptor';
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [
@@ -24,5 +25,6 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule,
   ],
+  providers: [AuthInterceptor],
 })
 export class PublicModule {}
