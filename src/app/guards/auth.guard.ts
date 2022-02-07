@@ -4,9 +4,7 @@ import {
   CanActivate,
   Router,
   RouterStateSnapshot,
-  UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthService } from '../private/services/auth.service';
 
 @Injectable({
@@ -39,19 +37,6 @@ export class AuthGuard implements CanActivate {
         this.router.navigate(['../public/login']);
         return false;
       }
-      // console.log(path);
-      // if (await this.authService.autoLogin()) {
-      //   alert('works');
-      //   return true;
-      // } else return false;
     }
-
-    // async canActivate(route: any): Promise<boolean> {
-    //   // const path = route.url[0].path;
-    //   if (await this.authService.autoLogin()) {
-    //     console.log('works');
-    //     return true;
-    //   } else return false;
-    // }
   }
 }

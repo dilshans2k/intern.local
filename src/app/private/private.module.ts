@@ -12,9 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-import { AuthInterceptor } from '../http-interceptor';
+import { AuthInterceptor } from '../interceptors/http-interceptor';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 @NgModule({
@@ -31,7 +30,6 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatTableModule,
     MatExpansionModule,
-    MatDialogModule,
     MatMenuModule,
     MatListModule,
   ],

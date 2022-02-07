@@ -49,7 +49,6 @@ export class RegisterComponent {
 
   signUp() {
     if (this.form.valid) {
-      // this.userService.create(this.form.getRawValue());
       this.userService
         .create({
           uname: this.uname.value,

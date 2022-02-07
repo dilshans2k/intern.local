@@ -41,11 +41,11 @@ form {
 }
 
 :host ::ng-deep .mat-form-field-subscript-wrapper {
-  position: static;
-  padding: 0;
+  /* position: static; */
+  padding: 0px;
 }
 :host ::ng-deep .mat-form-field-wrapper {
-  padding-bottom: 0.5vh;
+  padding-bottom: 2.5vh;
 }
 
 mat-form-field {
@@ -53,8 +53,14 @@ mat-form-field {
   position: relative;
 }
 
-#pattern-error {
+/* .errors {
+  display: flex;
+  flex-direction: column;
 }
+
+.errors > * {
+  width: 100%;
+} */
 
 .button {
   width: inherit;

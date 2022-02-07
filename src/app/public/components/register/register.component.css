@@ -40,11 +40,11 @@
 }
 
 :host ::ng-deep .mat-form-field-subscript-wrapper {
-  position: static;
+  /* position: static; */
   padding: 0;
 }
 :host ::ng-deep .mat-form-field-wrapper {
-  padding-bottom: 0.5vh;
+  padding-bottom: 2.5vh;
 }
 
 mat-form-field {
@@ -75,11 +75,3 @@ mat-form-field {
 .send-to-login .mat-title {
   font-size: 18px;
 }
-
-/* a {
-  text-decoration: none;
-} */
-
-/* .yes {
-  border-radius: 130px;
-} */

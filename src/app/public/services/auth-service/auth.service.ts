@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { LoginResponseI } from 'src/app/model/login-response';
 import { UserI } from 'src/app/model/user.interface';
@@ -16,24 +16,31 @@ export class AuthService {
   currentEmail: string = '';
   login(user: UserI): Observable<LoginResponseI> {
     return this.http
-      .post<LoginResponseI>(`${environment.apiUrl}/authh/login`, user, {
-        withCredentials: true,
-      })
+      .post<LoginResponseI>(`${environment.apiUrl}/authh/login`, user)
       .pipe(
         tap((res: LoginResponseI) => {
           console.log(res);
-          // alert(res);
           localStorage.setItem('token', res.accessToken);
           this.currentUsername = res.userName;
           this.currentEmail = res.email;
-        }),
-        tap(() =>
           this.snackbar.open('Login successfull', 'Close', {
             duration: 2000,
             horizontalPosition: 'right',
             verticalPosition: 'top',
-          })
-        )
+          });
+        }),
+        catchError((e) => {
+          this.snackbar.open(
+            `User could not be created, due to: ${e.error.message} `,
+            'Close',
+            {
+              duration: 5000,
+              horizontalPosition: 'right',
+              verticalPosition: 'top',
+            }
+          );
+          return throwError(() => e);
+        })
       );
   }
 }

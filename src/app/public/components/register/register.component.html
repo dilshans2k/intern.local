@@ -1,8 +1,3 @@
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
-  rel="stylesheet"
-/>
 <mat-toolbar color="primary">
   <a id="a-header" [routerLink]="['../login']"
     ><mat-icon aria-hidden="false" aria-label="Example home icon"
@@ -36,12 +31,6 @@
               <mat-error *ngIf="uname.touched && uname.hasError('required')"
                 >Username is required</mat-error
               >
-              <!-- <mat-error *ngIf="uname.touched && uname.hasError('minlength')"
-                >Username should be atleast 3 characters long</mat-error
-              >
-              <mat-error *ngIf="uname.touched && uname.hasError('maxlength')"
-                >Username should not exceed 20 characters</mat-error
-              > -->
               <mat-error *ngIf="uname.touched && uname.hasError('pattern')"
                 >Username should not contain special characters</mat-error
               >
@@ -91,9 +80,6 @@
               <mat-error *ngIf="email.touched && email.hasError('required')"
                 >Email is required</mat-error
               >
-              <!-- <mat-error *ngIf="email.touched && email.hasError('email')"
-                >Please enter a valid email</mat-error
-              > -->
               <mat-error *ngIf="email.touched && email.hasError('pattern')"
                 >Docquity email is required</mat-error
               >

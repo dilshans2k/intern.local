@@ -31,6 +31,5 @@ export class AuthInterceptor implements HttpInterceptor {
       withCredentials: true,
     });
     return next.handle(authReq);
-    throw new Error('Method not implemented.');
   }
 }

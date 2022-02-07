@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtModule } from '@auth0/angular-jwt';
-import { AuthInterceptor } from './http-interceptor';
+import { AuthInterceptor } from './interceptors/http-interceptor';
 
 export function tokenGetter() {
   return localStorage.getItem('token');

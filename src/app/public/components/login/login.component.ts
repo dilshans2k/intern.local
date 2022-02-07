@@ -3,8 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { AuthService } from '../../services/auth-service/auth.service';
-import { HostListener } from '@angular/core';
-import { AuthService as AS } from '../../../private/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -37,11 +35,7 @@ export class LoginComponent implements OnInit {
     } else this.ishover = false;
   }
 
-  constructor(
-    private pvtAuthService: AS,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   login() {
     if (this.form.valid) {
@@ -66,20 +60,21 @@ export class LoginComponent implements OnInit {
   get password(): FormControl {
     return this.form.get('password') as FormControl;
   }
-  patternErrorShow() {
-    console.log('clicked');
+  getEmailErrorMessage(formFieldName: string) {
+    return this.form.controls[formFieldName].hasError('required')
+      ? 'Email is required'
+      : this.form.controls[formFieldName].hasError('pattern')
+      ? 'Docquity email is required'
+      : '';
   }
 
-  // @HostListener('window:load')
-  // onLoad() {
-
-  // }
-
-  ngOnInit() {
-    // this.pvtAuthService.isLoggedIn();
-    // if (this.pvtAuthService.isLoggedIn1()) {
-    //   console.log('dashboard');
-    //   this.router.navigate(['../../../private/components/dashboard']);
-    // }
+  getPasswordErrorMessage(formFieldName: string) {
+    return this.form.controls[formFieldName].hasError('required')
+      ? 'Password is required'
+      : this.form.controls[formFieldName].hasError('pattern')
+      ? 'Password much match pattern'
+      : '';
   }
+
+  ngOnInit() {}
 }
