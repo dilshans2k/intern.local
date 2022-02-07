@@ -14,3 +14,4 @@ export class AppComponent {
     console.log('rutechangedhere',this.router.url)
   }
 }
+  
