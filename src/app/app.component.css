@@ -1,0 +1,36 @@
+mat-toolbar {
+    padding: 10px;
+  }
+
+  #toolbar-logo {
+    width: 10%;
+  }
+
+.mat-icon {
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+  
+#a-header {
+    color: white;
+    text-decoration: none;
+}
+
+#toolbar-route-buttons{
+    display: flex;
+    width: inherit;
+    justify-content: right;
+
+}
+
+#login-button{
+    padding: 0px 8px 0px 8px;
+}
+
+#register-button{
+    padding: 0px 8px 0px 8px;
+}
+
+.mat-icon-button {
+    width: auto;
+  }

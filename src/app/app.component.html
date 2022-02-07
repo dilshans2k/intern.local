@@ -1,1 +1,15 @@
+<mat-toolbar color="primary">
+    <div id="toolbar-logo">
+    <a id="a-header" [routerLink]="['../login']"
+      ><mat-icon aria-hidden="false" aria-label="Example home icon"
+        >house</mat-icon
+      >
+      intern.local</a
+    >
+</div>
+    <div id="toolbar-route-buttons">
+    <div id="login-button" *ngIf = "route == '/'" ><button mat-flat-button  [routerLink]="['/public/login']">Login</button></div>
+    <div id="register-button" *ngIf = "route == '/'"><button mat-flat-button [routerLink]="['/public/register']">Register</button></div>
+</div>
+  </mat-toolbar>
 <router-outlet></router-outlet>
