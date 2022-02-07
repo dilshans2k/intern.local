@@ -11,6 +11,9 @@ export class AppComponent {
   route: string;
   constructor(private router: Router){
     this.route = router.url;
-    console.log('rutechangedhere',this.router.url)
+    console.log('dsadasds');
+    console.log('rutechangedhere1',this.router.url)
+    console.log('dsadasds');
   }
 }
+  
