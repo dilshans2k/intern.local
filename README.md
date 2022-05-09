@@ -8,6 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 change made to d5
 change made to d6
+change made to d7
 
 ## Code scaffolding
 
